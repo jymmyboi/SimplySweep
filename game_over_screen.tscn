@@ -1,0 +1,40 @@
+[gd_scene load_steps=4 format=3 uid="uid://coxe0l7sgxmf0"]
+
+[ext_resource type="Script" path="res://game_over_screen.gd" id="1_ysb53"]
+[ext_resource type="FontFile" uid="uid://dsftvsoim0ojo" path="res://font/zxSpectrumStrict.ttf" id="2_tglb4"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_lboa4"]
+font = ExtResource("2_tglb4")
+font_size = 33
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ysb53")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 456.0
+offset_top = 264.0
+offset_right = 704.0
+offset_bottom = 311.0
+text = "OH NO!
+You hit a mine!"
+label_settings = SubResource("LabelSettings_lboa4")
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 504.0
+offset_top = 456.0
+offset_right = 653.0
+offset_bottom = 516.0
+theme_override_fonts/font = ExtResource("2_tglb4")
+theme_override_font_sizes/font_size = 32
+text = "Restart"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
