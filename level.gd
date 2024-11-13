@@ -32,6 +32,9 @@ func _ready() -> void:
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.is_pressed():
 		_select_tiles(event.position, event.button_index)
+	
+	if event.is_action_pressed("ui_cancel"):  # "ui_cancel" is often Esc by default
+		$PauseMenu.toggle_pause()
 
 
 
@@ -145,3 +148,7 @@ func _on_timer_timeout() -> void:
 func game_win() -> void:
 	GameState.time_passed = time_passed
 	get_tree().change_scene_to_file("res://win_screen.tscn")
+
+
+func _on_resume_button_pressed() -> void:
+	pass # Replace with function body.

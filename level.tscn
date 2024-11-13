@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=4 uid="uid://ducrrc120r775"]
+[gd_scene load_steps=10 format=4 uid="uid://ducrrc120r775"]
 
 [ext_resource type="Texture2D" uid="uid://bh7vy2smlex3g" path="res://assets/tiles.png" id="1_a2but"]
 [ext_resource type="Script" path="res://level.gd" id="1_ffa1h"]
 [ext_resource type="FontFile" uid="uid://dsftvsoim0ojo" path="res://font/zxSpectrumStrict.ttf" id="3_j6flu"]
+[ext_resource type="Script" path="res://pause_menu.gd" id="4_16exa"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vvaux"]
 0:0/0 = 0
@@ -69,4 +70,45 @@ offset_bottom = 8.66667
 text = "TEST"
 label_settings = SubResource("LabelSettings_ijkkt")
 
+[node name="PauseMenu" type="CanvasLayer" parent="."]
+script = ExtResource("4_16exa")
+
+[node name="Panel" type="Panel" parent="PauseMenu"]
+offset_right = 1183.0
+offset_bottom = 665.0
+
+[node name="ResumeButton" type="Button" parent="PauseMenu/Panel"]
+layout_mode = 0
+offset_left = 168.0
+offset_top = 225.0
+offset_right = 281.0
+offset_bottom = 261.0
+theme_override_fonts/font = ExtResource("3_j6flu")
+theme_override_font_sizes/font_size = 25
+text = "Resume"
+
+[node name="RestartButton" type="Button" parent="PauseMenu/Panel"]
+layout_mode = 0
+offset_left = 168.0
+offset_top = 299.0
+offset_right = 281.0
+offset_bottom = 335.0
+theme_override_fonts/font = ExtResource("3_j6flu")
+theme_override_font_sizes/font_size = 25
+text = "Restart
+"
+
+[node name="QuitButton" type="Button" parent="PauseMenu/Panel"]
+layout_mode = 0
+offset_left = 168.0
+offset_top = 371.0
+offset_right = 281.0
+offset_bottom = 407.0
+theme_override_fonts/font = ExtResource("3_j6flu")
+theme_override_font_sizes/font_size = 25
+text = "Quit"
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="pressed" from="PauseMenu/Panel/ResumeButton" to="PauseMenu" method="_on_resume_button_pressed"]
+[connection signal="pressed" from="PauseMenu/Panel/RestartButton" to="PauseMenu" method="_on_restart_button_pressed"]
+[connection signal="pressed" from="PauseMenu/Panel/QuitButton" to="PauseMenu" method="_on_quit_button_pressed"]

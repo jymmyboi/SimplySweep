@@ -19,6 +19,12 @@ config/icon="res://icon.svg"
 
 GameState="*res://GameState.gd"
 
+[display]
+
+window/size/mode=3
+window/stretch/mode="viewport"
+window/stretch/aspect="keep_height"
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
