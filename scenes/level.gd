@@ -83,7 +83,7 @@ func _set_tile_number(tile_pos, mine_num):
 			tilemap.set_cell(tile_pos, 1, Vector2i(5,1))
 		9:
 			tilemap.set_cell(tile_pos, 1, Vector2i(1,0)) #has mine
-			get_tree().change_scene_to_file("res://game_over_screen.tscn")
+			get_tree().change_scene_to_file("res://scenes/game_over_screen.tscn")
 		10:
 			tilemap.set_cell(tile_pos, 1, Vector2i(0,1)) #right click
 
@@ -147,7 +147,7 @@ func _on_timer_timeout() -> void:
 
 func game_win() -> void:
 	GameState.time_passed = time_passed
-	get_tree().change_scene_to_file("res://win_screen.tscn")
+	get_tree().change_scene_to_file("res://scenes/win_screen.tscn")
 
 
 func _on_resume_button_pressed() -> void:

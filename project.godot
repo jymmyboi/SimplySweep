@@ -11,13 +11,13 @@ config_version=5
 [application]
 
 config/name="project-orbit"
-run/main_scene="res://level.tscn"
+run/main_scene="res://scenes/level.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
-GameState="*res://GameState.gd"
+GameState="*res://scripts/GameState.gd"
 
 [display]
 
