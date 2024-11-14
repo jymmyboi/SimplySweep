@@ -1,2 +1,2 @@
-# project-orbit
+# SimplySweep
  Minesweeper but minimal
